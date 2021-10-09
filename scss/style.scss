@@ -1,0 +1,67 @@
+// Colors.
+$white: #fff;
+$customizer_blue: #007cba;
+$gray: #c2c2c2;
+
+.customize-control-kia-toggle {
+
+	.toggle--wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+
+		.customize-control-title {
+			flex: 2 0 0;
+			vertical-align: middle;
+			margin-bottom: 0;
+		}
+
+		input[type="checkbox"] {
+			display: none;
+		}
+
+		label {
+			background-color: $gray;
+			border-radius: 1em;
+			cursor: pointer;
+			display: inline-block;
+			height: 1.5em;
+			outline: none;
+			position: relative;
+			top: .125em;
+			right: 0;
+			transition: background 0.2s ease;
+			user-select: none;
+			width: 2.375em;
+
+			&:before {
+				display: block;
+				position: absolute;
+				content: "";
+				border-radius: 50%;
+        background: $white;
+				box-sizing: border-box;
+				height: 1em;
+        width: 1em;
+				left: .25em;
+				top: .25em;
+				transition: transform 0.2s ease, background 0.2s ease;		
+			}
+
+		}
+
+		input[type="checkbox"]:checked + label {
+			background-color: $customizer_blue;
+
+			&:before {
+				background-color: $white;
+				transform: translateX(.875em);
+			}
+
+		}
+	}
+
+	&:hover .toggle--wrapper label {
+		background-color: darken( $gray, 20 );
+	}
+}
