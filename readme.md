@@ -2,7 +2,7 @@
 
 A toggle control for the WordPress Customizer
 
-![Animation. There is a numerical input next to a slider range. As the slider is moved the input number value changes to match.](https://user-images.githubusercontent.com/507025/136671232-6c925852-0fc0-4a71-bfe8-0b41d968cf60.gif)
+![Animation. Three toggle inputs that are switched on and off.](https://user-images.githubusercontent.com/507025/136673379-d3801861-583c-4c05-8ddc-918ef3c6f77e.gif)
 
 ## Installation
 
