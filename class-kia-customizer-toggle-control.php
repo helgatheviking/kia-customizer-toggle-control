@@ -95,4 +95,15 @@ class KIA_Customizer_Toggle_Control extends \WP_Customize_Control {
 		);
 		return esc_url_raw( $url );
 	}
+
+	/**
+	 * Sanitize the toggle.
+	 *
+	 * @param string $value
+	 * @param Wp_Customizer_Setting
+	 * @return bool
+	 */
+	public static function sanitize( $value, $setting ) {
+		return ( isset( $input ) ) ? true : false;
+	}
 }

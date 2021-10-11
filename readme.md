@@ -48,7 +48,9 @@ function kia_customizer( $wp_customize ) {
             'default'              => false,
             'type'                 => 'option',
             'capability'           => 'edit_themes',
-            'transport'            => 'postMessage',	
+            'transport'            => 'postMessage',
+            'sanitize_callback'    => array( 'KIA_Customizer_Radio_Image_Control', 'sanitize' ),
+            'sanitize_js_callback' => array( 'KIA_Customizer_Radio_Image_Control', 'sanitize' ),
         )
     );
 
