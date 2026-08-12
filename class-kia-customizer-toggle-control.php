@@ -1,11 +1,9 @@
 <?php
 /**
- * Customizer Toggle Control
- * 
- * @version 1.0.0
- * @author Kathy Darling
- * @license GPL-3.0
- * 
+ * Customizer Toggle Control.
+ *
+ * @version 1.0.1
+ * @package Kia_Customizer_Toggle_Control
  */
 
 // Exit if accessed directly.
@@ -18,9 +16,23 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
+/**
+ * KIA_Customizer_Toggle_Control class.
+ */
 class KIA_Customizer_Toggle_Control extends \WP_Customize_Control {
+
+	/**
+	 * Control type.
+	 *
+	 * @var string
+	 */
 	public $type = 'kia-toggle';
 
+	/**
+	 * Control version.
+	 *
+	 * @var string
+	 */
 	private $version = '1.0.1';
 
 	/**
@@ -28,8 +40,8 @@ class KIA_Customizer_Toggle_Control extends \WP_Customize_Control {
 	 */
 	public function enqueue() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		wp_enqueue_script( 'kia-customizer-toggle-control', $this->abs_path_to_url( dirname( __FILE__ ) . '/js/script' . $suffix . '.js' ), array( 'jquery' ), $this->version, true );
-		wp_enqueue_style( 'kia-customizer-toggle-control', $this->abs_path_to_url( dirname( __FILE__ ) . '/css/style.css' ), array(), $this->version );
+		wp_enqueue_script( 'kia-customizer-toggle-control', $this->abs_path_to_url( __DIR__ . '/js/script' . $suffix . '.js' ), array( 'jquery' ), $this->version, true );
+		wp_enqueue_style( 'kia-customizer-toggle-control', $this->abs_path_to_url( __DIR__ . '/css/style.css' ), array(), $this->version );
 	}
 
 	/**
@@ -81,11 +93,11 @@ class KIA_Customizer_Toggle_Control extends \WP_Customize_Control {
 	}
 
 	/**
-	 * Plugin / theme agnostic path to URL
+	 * Plugin / theme agnostic path to URL.
 	 *
 	 * @see https://wordpress.stackexchange.com/a/264870/14546
-	 * @param string $path  file path
-	 * @return string       URL
+	 * @param string $path File path.
+	 * @return string      URL.
 	 */
 	private function abs_path_to_url( $path = '' ) {
 		$url = str_replace(
@@ -99,11 +111,11 @@ class KIA_Customizer_Toggle_Control extends \WP_Customize_Control {
 	/**
 	 * Sanitize the toggle.
 	 *
-	 * @param string $value
-	 * @param Wp_Customizer_Setting
+	 * @param  bool                   $value   Whether the toggle is checked.
+	 * @param  \WP_Customize_Setting  $setting Setting instance.
 	 * @return bool
 	 */
 	public static function sanitize( $value, $setting ) {
-		return ( isset( $input ) ) ? true : false;
+		return (bool) $value;
 	}
 }
