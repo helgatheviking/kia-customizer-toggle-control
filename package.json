@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-css": "sass scss/style.scss css/style.css --style=compressed --no-source-map",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "watch-css": "sass --watch scss/style.scss:css/style.css --style=compressed --no-source-map",
     "minify": "rm -f js/script.min.js && uglifyjs js/script.js --compress --mangle --warn --output js/script.min.js",
     "build": "npm run build-css && npm run minify"
   },
@@ -21,8 +21,7 @@
   "author": "helgatheviking",
   "license": "GPL-3.0",
   "devDependencies": {
-    "sass": "^1.77.0",
-    "nodemon": "^2.0.16",
     "uglify-js": "^3.15.5"
+    "sass": "^1.102.0",
   }
 }
