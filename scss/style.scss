@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Colors.
 $white: #fff;
 $customizer_blue: #007cba;
@@ -62,6 +64,6 @@ $gray: #c2c2c2;
 	}
 
 	&:hover .toggle--wrapper label {
-		background-color: darken( $gray, 20 );
+		background-color: color.adjust( $gray, $lightness: -20% );
 	}
 }
