@@ -2,7 +2,7 @@
 /**
  * Customizer Toggle Control.
  *
- * @version 1.0.1
+ * @version 1.0.2
  * @package Kia_Customizer_Toggle_Control
  */
 
@@ -33,7 +33,7 @@ class KIA_Customizer_Toggle_Control extends \WP_Customize_Control {
 	 *
 	 * @var string
 	 */
-	private $version = '1.0.1';
+	private $version = '1.0.2';
 
 	/**
 	 * Enqueue scripts/styles.
